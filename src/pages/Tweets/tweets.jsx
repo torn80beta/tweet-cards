@@ -13,6 +13,7 @@ export const Tweets = () => {
   }, [dispatch]);
 
   return (
+    // console.log(tweets),
     <section>
       <TweetsSection></TweetsSection>
     </section>
