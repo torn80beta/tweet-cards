@@ -1,13 +1,16 @@
 {
   "files": {
-    "main.css": "/tweet-cards/static/css/main.f52911bb.css",
-    "main.js": "/tweet-cards/static/js/main.1cf22e95.js",
+    "main.css": "/tweet-cards/static/css/main.b5379ad4.css",
+    "main.js": "/tweet-cards/static/js/main.5f12b0ea.js",
+    "static/media/Montserrat-Medium.ttf": "/tweet-cards/static/media/Montserrat-Medium.c86e3b9010ff63c99166.ttf",
+    "static/media/Montserrat-Bold.ttf": "/tweet-cards/static/media/Montserrat-Bold.2c155811b35513d5beaa.ttf",
+    "static/media/picture2_1.png": "/tweet-cards/static/media/picture2_1.b3d9942b3f9d5dad1ff0.png",
     "index.html": "/tweet-cards/index.html",
-    "main.f52911bb.css.map": "/tweet-cards/static/css/main.f52911bb.css.map",
-    "main.1cf22e95.js.map": "/tweet-cards/static/js/main.1cf22e95.js.map"
+    "main.b5379ad4.css.map": "/tweet-cards/static/css/main.b5379ad4.css.map",
+    "main.5f12b0ea.js.map": "/tweet-cards/static/js/main.5f12b0ea.js.map"
   },
   "entrypoints": [
-    "static/css/main.f52911bb.css",
-    "static/js/main.1cf22e95.js"
+    "static/css/main.b5379ad4.css",
+    "static/js/main.5f12b0ea.js"
   ]
 }
