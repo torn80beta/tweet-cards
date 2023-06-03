@@ -82,9 +82,11 @@ export const StyledTweetFallowButton = styled.button`
   border-radius: 10.3108px;
   cursor: pointer;
 
-  &:hover,
-  :focus {
+  &:hover {
     background: #aeffd9;
+  }
+  &:active {
+    background: #5cd3a8;
   }
 `;
 

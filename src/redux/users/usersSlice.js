@@ -7,13 +7,13 @@ export const usersSlice = createSlice({
     items: [],
     isLoading: false,
     error: null,
-    // page: 1,
   },
-  // reducers: {
-  //   incrementPage: state => {
-  //     state.page += 1;
-  //   },
-  // },
+  reducers: {
+    setIsFollow: (state, action) => {
+      const index = state.items.findIndex(item => item.id === action.payload);
+      state.items[index].follow = !state.items[index].follow;
+    },
+  },
   extraReducers: {
     [fetchUsers.pending](state) {
       state.isLoading = true;
@@ -31,4 +31,4 @@ export const usersSlice = createSlice({
 });
 
 export const usersReducer = usersSlice.reducer;
-// export const { incrementPage } = usersSlice.actions;
+export const { setIsFollow } = usersSlice.actions;
