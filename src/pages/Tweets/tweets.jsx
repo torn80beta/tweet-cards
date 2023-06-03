@@ -13,12 +13,9 @@ export const Tweets = () => {
   const dispatch = useDispatch();
   const tweets = useSelector(getUsers);
   const isFetching = useSelector(getIsLoading);
-  const [page, setPage] = useState(0);
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
-    if (page === 0) {
-      setPage(page + 1);
-    }
     dispatch(fetchUsers(page));
   }, [dispatch, page]);
 
@@ -36,7 +33,7 @@ export const Tweets = () => {
           </li>
         ))}
       </StyledTweetsUl>
-      {!isFetching && page < 3 && (
+      {tweets.length > 0 && tweets.length < 15 && (
         <StyledLoadMoreButton
           type="button"
           onClick={handleLoadMore}

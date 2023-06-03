@@ -31,10 +31,6 @@ export const StyledTweetAvatar = styled.img`
   left: 160px;
   top: 185px;
   border-radius: 50%;
-  /* border: 8px solid #ebd8ff;
-  box-shadow: 0px 4.39163px 4.39163px rgba(0, 0, 0, 0.06),
-    inset 0px -2.19582px 4.39163px #ae7be3,
-    inset 0px 4.39163px 3.29372px #fbf8ff; */
 `;
 
 export const StyledAvatarEllipse = styled.img`
@@ -66,6 +62,8 @@ export const StyledTweetText = styled.p`
   color: #ebd8ff;
 `;
 
+const followButtonBgColor = props => props.bgColor;
+
 export const StyledTweetFallowButton = styled.button`
   width: 196px;
   height: 50px;
@@ -78,7 +76,7 @@ export const StyledTweetFallowButton = styled.button`
   line-height: 22px;
   text-transform: uppercase;
   color: #373737;
-  background: #ebd8ff;
+  background: ${followButtonBgColor};
   border: none;
   box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.25);
   border-radius: 10.3108px;
