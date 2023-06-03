@@ -1,4 +1,4 @@
-import { getUsers } from 'redux/users/selectors';
+import { getUsers, getIsLoading } from 'redux/users/selectors';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { fetchUsers } from 'redux/users/operations';
@@ -12,9 +12,13 @@ import {
 export const Tweets = () => {
   const dispatch = useDispatch();
   const tweets = useSelector(getUsers);
-  const [page, setPage] = useState(1);
+  const isFetching = useSelector(getIsLoading);
+  const [page, setPage] = useState(0);
 
   useEffect(() => {
+    if (page === 0) {
+      setPage(page + 1);
+    }
     dispatch(fetchUsers(page));
   }, [dispatch, page]);
 
@@ -32,9 +36,15 @@ export const Tweets = () => {
           </li>
         ))}
       </StyledTweetsUl>
-      <StyledLoadMoreButton type="button" onClick={handleLoadMore}>
-        Load more
-      </StyledLoadMoreButton>
+      {!isFetching && page < 3 && (
+        <StyledLoadMoreButton
+          type="button"
+          onClick={handleLoadMore}
+          disabled={isFetching}
+        >
+          Load more
+        </StyledLoadMoreButton>
+      )}
     </StyledTweetsSection>
   );
 };
