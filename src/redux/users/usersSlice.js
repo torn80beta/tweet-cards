@@ -7,7 +7,13 @@ export const usersSlice = createSlice({
     items: [],
     isLoading: false,
     error: null,
+    // page: 1,
   },
+  // reducers: {
+  //   incrementPage: state => {
+  //     state.page += 1;
+  //   },
+  // },
   extraReducers: {
     [fetchUsers.pending](state) {
       state.isLoading = true;
@@ -15,7 +21,7 @@ export const usersSlice = createSlice({
     [fetchUsers.fulfilled](state, action) {
       state.isLoading = false;
       state.error = null;
-      state.items = action.payload;
+      state.items = [...state.items, ...action.payload];
     },
     [fetchUsers.rejected](state, action) {
       state.isLoading = false;
@@ -25,3 +31,4 @@ export const usersSlice = createSlice({
 });
 
 export const usersReducer = usersSlice.reducer;
+// export const { incrementPage } = usersSlice.actions;

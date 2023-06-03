@@ -26,7 +26,7 @@ export const TweetCard = ({
       <StyledTweetAvatar src={avatar} alt={name} />
       <StyledTweetDivider />
       <StyledTweetText>{tweets} Tweets</StyledTweetText>
-      <StyledTweetText>{followers} Followers</StyledTweetText>
+      <StyledTweetText>{`100,${followers + 500}`} Followers</StyledTweetText>
       <StyledTweetFallowButton>Fallow</StyledTweetFallowButton>
     </StyledTweetCardWrapper>
   );
