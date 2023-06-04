@@ -11,6 +11,8 @@ import {
 import { clearTweetsOuUnmount } from 'redux/users/usersSlice';
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import { StyledNavLink } from './Tweets.styled';
+import { StyledLoadSpinner } from 'components/LoadSpinner/LoadSpinner.styled';
+import { RotatingLines } from 'react-loader-spinner';
 
 export const Tweets = () => {
   const dispatch = useDispatch();
@@ -38,6 +40,17 @@ export const Tweets = () => {
       <StyledNavLink to={'Home'}>
         <KeyboardBackspaceIcon sx={{ fontSize: 50 }} />
       </StyledNavLink>
+      {isFetching && (
+        <StyledLoadSpinner>
+          <RotatingLines
+            strokeColor="grey"
+            strokeWidth="5"
+            animationDuration="0.75"
+            width="96"
+            visible={true}
+          />
+        </StyledLoadSpinner>
+      )}
       <StyledTweetsUl>
         {tweets.map(tweet => (
           <li key={tweet.id}>
