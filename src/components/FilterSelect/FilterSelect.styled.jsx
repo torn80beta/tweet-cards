@@ -5,13 +5,10 @@ import InputLabel from '@mui/material/InputLabel';
 
 export const StyledFilterBox = styled(Box)`
   position: fixed;
+  box-sizing: border-box;
   top: 40px;
-  right: 40px;
+  right: calc((100vw - 90%) * 0.25);
   background-color: #29272c;
-  /* border: 1px solid white; */
-  /* border-color: white; */
-  /* border-color: '#80bdff';
-  box-shadow: '0 0 0 0.2rem rgba(0,123,255,.25)'; */
 `;
 
 export const StyledFormControl = styled(FormControl)`

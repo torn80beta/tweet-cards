@@ -2,15 +2,15 @@ import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
 
 export const StyledTweetsSection = styled.section`
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* align-content: center; */
-  max-width: 1200px;
+  max-width: 100vw;
   min-height: 100vh;
   margin: 0 auto;
-  padding: 40px 0px;
+  padding: 80px 0px;
   background-color: #1e242a;
 `;
 
@@ -48,8 +48,9 @@ export const StyledLoadMoreButton = styled.button`
 export const StyledNavLink = styled(NavLink)`
   position: fixed;
   top: 50%;
-  left: 20px;
+  left: calc((100vw - 90%) * 0.25);
   color: #ebd8ff;
+  z-index: 100;
   &:hover {
     color: #aeffd9;
   }
