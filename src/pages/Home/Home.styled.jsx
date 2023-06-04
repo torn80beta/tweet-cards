@@ -11,5 +11,6 @@ export const StyledMain = styled.main`
 `;
 
 export const StyledH1 = styled.h1`
+  text-align: center;
   color: #fff;
 `;

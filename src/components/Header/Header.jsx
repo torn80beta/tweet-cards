@@ -38,9 +38,9 @@ function DrawerAppBar(props) {
       <Divider />
       <List>
         {navItems.map(item => (
-          <ListItem key={item} disablePadding>
+          <ListItem key={item.props.children} disablePadding>
             <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item} />
+              <ListItemText primary={item}></ListItemText>
             </ListItemButton>
           </ListItem>
         ))}
@@ -54,7 +54,7 @@ function DrawerAppBar(props) {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar component="nav" sx={{ maxHeight: '60px' }}>
+      <AppBar component="nav">
         <Toolbar>
           <IconButton
             color="inherit"
@@ -68,13 +68,16 @@ function DrawerAppBar(props) {
           <Typography
             variant="h6"
             component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+            sx={{
+              flexGrow: 1,
+              display: { xs: 'none', sm: 'block' },
+            }}
           >
             TweetCards
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map(item => (
-              <Button key={item} sx={{ color: '#fff' }}>
+              <Button key={item.props.children} sx={{ color: '#fff' }}>
                 {item}
               </Button>
             ))}
@@ -105,12 +108,12 @@ function DrawerAppBar(props) {
   );
 }
 
-// DrawerAppBar.propTypes = {
-//   /**
-//    * Injected by the documentation to work in an iframe.
-//    * You won't need it on your project.
-//    */
-//   window: PropTypes.func,
-// };
+DrawerAppBar.propTypes = {
+  /**
+   * Injected by the documentation to work in an iframe.
+   * You won't need it on your project.
+   */
+  window: PropTypes.func,
+};
 
 export default DrawerAppBar;

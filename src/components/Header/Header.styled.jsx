@@ -9,4 +9,14 @@ export const StyledNavLink = styled(NavLink)`
   line-height: 1.6;
   letter-spacing: 0.0075em;
   color: white;
+  &:hover {
+    color: aqua;
+  }
+
+  @media screen and (max-width: 600px) {
+    color: black;
+    &:hover {
+      color: #9560e9;
+    }
+  }
 `;
