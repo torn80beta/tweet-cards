@@ -17,9 +17,12 @@ export const fetchUsers = createAsyncThunk(
 
 export const updateIsFallow = createAsyncThunk(
   'users/updateIsFallow',
-  async ({ id, follow }, thunkAPI) => {
+  async ({ id, follow, followers }, thunkAPI) => {
     try {
-      const response = await axios.put(`/users/:${id}`, { follow });
+      const response = await axios.put(`/users/${id}`, {
+        follow: follow,
+        followers: followers,
+      });
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

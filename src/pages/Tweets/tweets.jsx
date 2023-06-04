@@ -24,7 +24,6 @@ export const Tweets = () => {
   }
 
   return (
-    // console.log(tweets),
     <StyledTweetsSection>
       <StyledTweetsUl>
         {tweets.map(tweet => (

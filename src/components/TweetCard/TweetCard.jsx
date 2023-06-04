@@ -12,7 +12,7 @@ import picture2_1 from '../../images/picture2_1.png';
 import ellipse from '../../images/ellipse.png';
 import logo from '../../images/logo.png';
 import { useDispatch } from 'react-redux';
-import { setIsFollow } from 'redux/users/usersSlice';
+import { updateIsFallow } from 'redux/users/operations';
 
 export const TweetCard = ({
   tweet: { name, avatar, tweets, followers, id, follow },
@@ -27,13 +27,17 @@ export const TweetCard = ({
     return follow ? 'Following' : 'Follow';
   };
 
-  function handleFollow(id) {
-    console.log(id);
-    dispatch(setIsFollow(id));
+  const updateFollowers = () => {
+    return follow ? followers - 1 : followers + 1;
+  };
+
+  function handleFollow(id, follow) {
+    dispatch(
+      updateIsFallow({ id, follow: !follow, followers: updateFollowers() })
+    );
   }
 
   return (
-    // console.log(follow, bgColor),
     <StyledTweetCardWrapper>
       <StyledTweetLogo src={logo} />
       <StyledTweetImage src={picture2_1} />
@@ -46,7 +50,7 @@ export const TweetCard = ({
         type="button"
         bgColor={bgColor}
         onClick={() => {
-          handleFollow(id, follow);
+          handleFollow(id, follow, followers);
         }}
       >
         {isFollow()}
