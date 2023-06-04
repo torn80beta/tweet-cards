@@ -13,7 +13,6 @@ import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import { StyledNavLink } from './Tweets.styled';
 import { StyledLoadSpinner } from 'components/LoadSpinner/LoadSpinner.styled';
 import { RotatingLines } from 'react-loader-spinner';
-// import FilterSelect from 'components/FilterSelect/FilterSelect';
 import Filter from 'components/Filter/Filter';
 
 export const Tweets = () => {
@@ -35,8 +34,6 @@ export const Tweets = () => {
   }, [dispatch]);
 
   const handleFilterChange = ({ value }) => {
-    // console.log(value);
-    // setFilter(event.target.value);
     setFilter(value);
   };
 
@@ -59,7 +56,6 @@ export const Tweets = () => {
       <StyledNavLink to={'Home'}>
         <KeyboardBackspaceIcon sx={{ fontSize: 50 }} />
       </StyledNavLink>
-      {/* <FilterSelect onChange={handleFilterChange} value={filter}></FilterSelect> */}
       <Filter onChange={handleFilterChange} value={filter}></Filter>
       {isFetching && (
         <StyledLoadSpinner>

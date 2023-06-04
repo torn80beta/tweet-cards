@@ -11,12 +11,6 @@ export const StyledFilterBox = styled(Box)`
   background-color: #29272c;
 `;
 
-export const StyledFormControl = styled(FormControl)`
-  /* border: 1px solid; */
-  /* border-color: white; */
-`;
+export const StyledFormControl = styled(FormControl)``;
 
-export const StyledInputLabel = styled(InputLabel)`
-  /* border: 1px solid white; */
-  /* color: white; */
-`;
+export const StyledInputLabel = styled(InputLabel)``;

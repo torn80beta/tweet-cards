@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
+import DrawerAppBar from 'components/Header/Header';
 // import { Suspense } from 'react';
 // import { StyledLoadSpinner } from 'components/LoadSpinner/LoadSpinner.styled';
 // import { RotatingLines } from 'react-loader-spinner';
@@ -7,12 +8,17 @@ import { Outlet } from 'react-router-dom';
 const SharedLayout = () => {
   return (
     <div>
-      <header>
+      {/* <header>
         <nav>
           <NavLink to="/">Home</NavLink>
           <NavLink to="/tweets">Tweets</NavLink>
         </nav>
-      </header>
+      </header> */}
+      <DrawerAppBar>
+        <NavLink to="/">Home</NavLink>
+        <NavLink to="/tweets">Tweets</NavLink>
+      </DrawerAppBar>
+      <Outlet />
       {/* <Suspense
         fallback={
           <StyledLoadSpinner>
@@ -25,9 +31,9 @@ const SharedLayout = () => {
             />
           </StyledLoadSpinner>
         }
-      > */}
-      <Outlet />
-      {/* </Suspense> */}
+      >
+        <Outlet />
+      </Suspense> */}
     </div>
   );
 };

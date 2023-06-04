@@ -10,7 +10,7 @@ export default function Filter({ value, onChange }) {
   return (
     <StyledFilterWrapper className="BaseFilter">
       <StyledSelect
-        // defaultValue={value}
+        defaultValue={value}
         onChange={onChange}
         options={options}
         placeholder={'Filter'}

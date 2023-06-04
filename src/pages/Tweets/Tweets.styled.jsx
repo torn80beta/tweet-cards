@@ -10,8 +10,9 @@ export const StyledTweetsSection = styled.section`
   max-width: 100vw;
   min-height: 100vh;
   margin: 0 auto;
-  padding: 80px 0px;
-  background-color: #1e242a;
+  padding: 110px 0px 60px;
+  /* background-color: #1e242a; */
+  background-color: #112538;
 `;
 
 export const StyledTweetsUl = styled.ul`
@@ -49,7 +50,8 @@ export const StyledNavLink = styled(NavLink)`
   position: fixed;
   top: 50%;
   left: calc((100vw - 90%) * 0.25);
-  color: #ebd8ff;
+  /* color: #ebd8ff; */
+  color: #452199;
   z-index: 100;
   &:hover {
     color: #aeffd9;
