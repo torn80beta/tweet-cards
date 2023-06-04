@@ -5,7 +5,7 @@ import { StyledFilterBox, StyledFormControl } from './FilterSelect.styled';
 
 export default function FilterSelect({ value, onChange }) {
   return (
-    <StyledFilterBox sx={{ minWidth: 140 }}>
+    <StyledFilterBox sx={{ m: 3, minWidth: 140 }}>
       <StyledFormControl fullWidth size="small">
         <InputLabel
           id="filter-label"
