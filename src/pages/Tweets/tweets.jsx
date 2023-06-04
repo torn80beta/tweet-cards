@@ -8,6 +8,9 @@ import {
   StyledTweetsUl,
   StyledLoadMoreButton,
 } from './Tweets.styled';
+import { clearTweetsOuUnmount } from 'redux/users/usersSlice';
+import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
+import { StyledNavLink } from './Tweets.styled';
 
 export const Tweets = () => {
   const dispatch = useDispatch();
@@ -19,12 +22,22 @@ export const Tweets = () => {
     dispatch(fetchUsers(page));
   }, [dispatch, page]);
 
+  useEffect(() => {
+    return () => {
+      dispatch(clearTweetsOuUnmount());
+      setPage(1);
+    };
+  }, [dispatch]);
+
   function handleLoadMore() {
     setPage(page + 1);
   }
 
   return (
     <StyledTweetsSection>
+      <StyledNavLink to={'Home'}>
+        <KeyboardBackspaceIcon sx={{ fontSize: 50 }} />
+      </StyledNavLink>
       <StyledTweetsUl>
         {tweets.map(tweet => (
           <li key={tweet.id}>

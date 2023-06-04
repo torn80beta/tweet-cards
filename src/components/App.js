@@ -1,6 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
 import { Home } from 'pages/Home/Home';
-import { NotFound } from 'pages/NotFound/NotFound';
 import { Tweets } from 'pages/Tweets/Tweets';
 import { useEffect } from 'react';
 import SharedLayout from './SharedLayout/SharedLayout';
@@ -16,8 +15,8 @@ export const App = () => {
       <Route path="/" element={<SharedLayout />}>
         <Route index element={<Home />} />
         <Route path="tweets" element={<Tweets />} />
+        <Route path="*" element={<Home />} />
       </Route>
-      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 };

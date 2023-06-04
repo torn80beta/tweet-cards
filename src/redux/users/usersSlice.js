@@ -9,10 +9,9 @@ export const usersSlice = createSlice({
     error: null,
   },
   reducers: {
-    // setIsFollow: (state, action) => {
-    //   const index = state.items.findIndex(item => item.id === action.payload);
-    //   state.items[index].follow = !state.items[index].follow;
-    // },
+    clearTweetsOuUnmount: state => {
+      state.items.length = 0;
+    },
   },
   extraReducers: {
     [fetchUsers.pending](state) {
@@ -46,4 +45,4 @@ export const usersSlice = createSlice({
 });
 
 export const usersReducer = usersSlice.reducer;
-export const { setIsFollow } = usersSlice.actions;
+export const { clearTweetsOuUnmount } = usersSlice.actions;

@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { NavLink } from 'react-router-dom';
 
 export const StyledTweetsSection = styled.section`
   display: flex;
@@ -41,5 +42,18 @@ export const StyledLoadMoreButton = styled.button`
   &:hover,
   :focus {
     background: #6031cd;
+  }
+`;
+
+export const StyledNavLink = styled(NavLink)`
+  position: fixed;
+  top: 50%;
+  left: 20px;
+  color: #ebd8ff;
+  &:hover {
+    color: #aeffd9;
+  }
+  &:active {
+    color: #5cd3a8;
   }
 `;
