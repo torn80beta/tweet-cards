@@ -19,11 +19,6 @@ export const TweetCard = ({
 }) => {
   const dispatch = useDispatch();
 
-  function handleFollow(id) {
-    console.log(id);
-    dispatch(setIsFollow(id));
-  }
-
   const bgColor = () => {
     return follow ? '#5CD3A8' : '#EBD8FF';
   };
@@ -31,6 +26,11 @@ export const TweetCard = ({
   const isFollow = () => {
     return follow ? 'Following' : 'Follow';
   };
+
+  function handleFollow(id) {
+    console.log(id);
+    dispatch(setIsFollow(id));
+  }
 
   return (
     // console.log(follow, bgColor),
@@ -46,7 +46,7 @@ export const TweetCard = ({
         type="button"
         bgColor={bgColor}
         onClick={() => {
-          handleFollow(id);
+          handleFollow(id, follow);
         }}
       >
         {isFollow()}

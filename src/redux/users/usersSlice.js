@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchUsers } from './operations';
+import { fetchUsers, updateIsFallow } from './operations';
 
 export const usersSlice = createSlice({
   name: 'users',
@@ -24,6 +24,17 @@ export const usersSlice = createSlice({
       state.items = [...state.items, ...action.payload];
     },
     [fetchUsers.rejected](state, action) {
+      state.isLoading = false;
+      state.error = action.payload;
+    },
+    [updateIsFallow.pending](state) {
+      state.isLoading = true;
+    },
+    [updateIsFallow.fulfilled](state) {
+      state.isLoading = false;
+      state.error = null;
+    },
+    [updateIsFallow.rejected](state, action) {
       state.isLoading = false;
       state.error = action.payload;
     },

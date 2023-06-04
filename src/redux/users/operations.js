@@ -8,7 +8,18 @@ export const fetchUsers = createAsyncThunk(
   async (page, thunkAPI) => {
     try {
       const response = await axios.get(`/users/?page=${page}&limit=5`);
-      //   console.log(response);
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const updateIsFallow = createAsyncThunk(
+  'users/updateIsFallow',
+  async ({ id, follow }, thunkAPI) => {
+    try {
+      const response = await axios.put(`/users/:${id}`, { follow });
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
