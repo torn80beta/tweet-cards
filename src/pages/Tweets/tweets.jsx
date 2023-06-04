@@ -13,12 +13,14 @@ import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import { StyledNavLink } from './Tweets.styled';
 import { StyledLoadSpinner } from 'components/LoadSpinner/LoadSpinner.styled';
 import { RotatingLines } from 'react-loader-spinner';
+import FilterSelect from 'components/FilterSelect/FilterSelect';
 
 export const Tweets = () => {
   const dispatch = useDispatch();
   const tweets = useSelector(getUsers);
   const isFetching = useSelector(getIsLoading);
   const [page, setPage] = useState(1);
+  const [filter, setFilter] = useState('All');
 
   useEffect(() => {
     dispatch(fetchUsers(page));
@@ -31,15 +33,30 @@ export const Tweets = () => {
     };
   }, [dispatch]);
 
+  const handleFilterChange = event => {
+    setFilter(event.target.value);
+  };
+
   function handleLoadMore() {
     setPage(page + 1);
   }
+
+  const filteredTweets = () => {
+    if (filter === 'Follow') {
+      return tweets.filter(tweet => tweet.follow === false);
+    }
+    if (filter === 'Followings') {
+      return tweets.filter(tweet => tweet.follow === true);
+    }
+    return tweets;
+  };
 
   return (
     <StyledTweetsSection>
       <StyledNavLink to={'Home'}>
         <KeyboardBackspaceIcon sx={{ fontSize: 50 }} />
       </StyledNavLink>
+      <FilterSelect onChange={handleFilterChange} value={filter}></FilterSelect>
       {isFetching && (
         <StyledLoadSpinner>
           <RotatingLines
@@ -52,7 +69,7 @@ export const Tweets = () => {
         </StyledLoadSpinner>
       )}
       <StyledTweetsUl>
-        {tweets.map(tweet => (
+        {filteredTweets().map(tweet => (
           <li key={tweet.id}>
             <TweetCard tweet={tweet} />
           </li>
