@@ -15,6 +15,7 @@ import { StyledLoadSpinner } from 'components/LoadSpinner/LoadSpinner.styled';
 import { RotatingLines } from 'react-loader-spinner';
 import Filter from 'components/Filter/Filter';
 import ScrollToTop from 'react-scroll-to-top';
+import { LayoutSwitch } from 'components/Switch/Switch';
 
 const Tweets = () => {
   const dispatch = useDispatch();
@@ -22,6 +23,7 @@ const Tweets = () => {
   const isFetching = useSelector(getIsLoading);
   const [page, setPage] = useState(1);
   const [filter, setFilter] = useState('All');
+  const [layout, setLayout] = useState(true);
 
   useEffect(() => {
     dispatch(fetchUsers(page));
@@ -42,6 +44,10 @@ const Tweets = () => {
     setPage(page + 1);
   }
 
+  const handleLayoutSwitch = event => {
+    setLayout(event.target.checked);
+  };
+
   const filteredTweets = () => {
     if (filter === 'Follow') {
       return tweets.filter(tweet => tweet.follow === false);
@@ -57,6 +63,12 @@ const Tweets = () => {
       <StyledNavLink to={'Home'}>
         <KeyboardBackspaceIcon sx={{ fontSize: 50 }} />
       </StyledNavLink>
+      {filteredTweets().length > 1 && !isFetching && (
+        <LayoutSwitch
+          onChange={handleLayoutSwitch}
+          checked={layout}
+        ></LayoutSwitch>
+      )}
       <Filter onChange={handleFilterChange} value={filter}></Filter>
       {isFetching && (
         <StyledLoadSpinner>
@@ -69,7 +81,13 @@ const Tweets = () => {
           />
         </StyledLoadSpinner>
       )}
-      <StyledTweetsUl>
+      <StyledTweetsUl
+        style={
+          layout
+            ? { flexDirection: 'column' }
+            : { flexDirection: 'row', flexWrap: 'wrap' }
+        }
+      >
         {filteredTweets().length === 0 && !isFetching && (
           <p style={{ color: 'white' }}>
             There is nothing to display ¯\_(ツ)_/¯
@@ -81,7 +99,7 @@ const Tweets = () => {
           </li>
         ))}
       </StyledTweetsUl>
-      {tweets.length > 0 && tweets.length < 50 && filter === 'All' && (
+      {tweets.length > 0 && tweets.length < 40 && filter === 'All' && (
         <StyledLoadMoreButton
           type="button"
           onClick={handleLoadMore}

@@ -63,7 +63,7 @@ const Home = () => {
         <StyledImg src={follow_2} alt="follow" />
 
         <StyledTextP>
-          By default, when you go to the "TWEETS" page, the first five cards
+          By default, when you go to the "TWEETS" page, the first eight cards
           from the database are loaded. At the same time, the "Load more" button
           will appear at the bottom of the page, when clicked, the next five
           cards will be loaded. The "Load more" button only appears if the

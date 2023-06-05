@@ -17,6 +17,8 @@ export const StyledTweetsSection = styled.section`
 export const StyledTweetsUl = styled.ul`
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 25px;
   margin-bottom: 25px;
 `;

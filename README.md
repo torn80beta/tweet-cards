@@ -6,7 +6,7 @@
  <p>The "Follow" button displays the subscription status for this user. If you are subscribed - the button is green and the inscription is "Following". When clicking on the button in this state, the user will be unsubscribed, the color of the button will change to pale pink, and the number of subscribers will decrease by one.</p>
  <div align="center" ><img src="https://github.com/torn80beta/tweet-cards/raw/main/src/images/follow.jpg" height="85" /><span> </span><img src="https://github.com/torn80beta/tweet-cards/raw/main/src/images/follow_2.jpg" height="85" /></div>
  
- <p>By default, when you go to the "TWEETS" page, the first five cards from the database are loaded. At the same time, the "Load more" button will appear at the bottom of the page, when clicked, the next five cards will be loaded. The "Load more" button only appears if the server still has cards available for download. The button is also not available during the server request process.</p>
+ <p>By default, when you go to the "TWEETS" page, the first eight cards from the database are loaded. At the same time, the "Load more" button will appear at the bottom of the page, when clicked, the next five cards will be loaded. The "Load more" button only appears if the server still has cards available for download. The button is also not available during the server request process.</p>
  
  <div align="center"><img src="https://github.com/torn80beta/tweet-cards/raw/main/src/images/load_more.jpg" height="80" /></div>
  
