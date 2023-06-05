@@ -13,6 +13,7 @@ import ellipse from '../../images/ellipse.png';
 import logo from '../../images/logo.png';
 import { useDispatch } from 'react-redux';
 import { updateIsFallow } from 'redux/users/operations';
+import PropTypes from 'prop-types';
 
 export const TweetCard = ({
   tweet: { name, avatar, tweets, followers, id, follow },
@@ -57,4 +58,8 @@ export const TweetCard = ({
       </StyledTweetFallowButton>
     </StyledTweetCardWrapper>
   );
+};
+
+TweetCard.propTypes = {
+  tweet: PropTypes.object.isRequired,
 };

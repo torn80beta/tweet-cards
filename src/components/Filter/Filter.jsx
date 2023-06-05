@@ -1,4 +1,5 @@
 import { StyledFilterWrapper, StyledSelect } from './Filter.styled';
+import PropTypes from 'prop-types';
 
 const options = [
   { value: 'All', label: 'All' },
@@ -18,3 +19,8 @@ export default function Filter({ value, onChange }) {
     </StyledFilterWrapper>
   );
 }
+
+Filter.propTypes = {
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+};

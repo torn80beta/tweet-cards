@@ -2,6 +2,7 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 import { StyledFilterBox, StyledFormControl } from './FilterSelect.styled';
+import PropTypes from 'prop-types';
 
 export default function FilterSelect({ value, onChange }) {
   return (
@@ -47,3 +48,8 @@ export default function FilterSelect({ value, onChange }) {
     </StyledFilterBox>
   );
 }
+
+FilterSelect.propTypes = {
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+};
