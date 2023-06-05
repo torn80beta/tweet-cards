@@ -20,4 +20,16 @@ When the screen width is less than 600px, the navigation buttons located on the 
  <div align="center"><img src="https://github.com/torn80beta/tweet-cards/raw/main/src/images/burger.jpg" height="120" /></div>
  <div align="center"><img src="https://github.com/torn80beta/tweet-cards/raw/main/src/images/modal.jpg" height="200" /></div>
 
-<p>Thank you for your attention to the project! I hope you enjoy it.</p>
+<h2 align="center">Technologies</h2>
+
+<p color="#0089ff" align="center">Technologies and libraries used to create this project:</p>
+<p color="#0089ff" align="center">React</p>
+<p color="#0089ff" align="center">Redux Toolkit</p>
+<p color="#0089ff" align="center">React Hooks</p>
+<p color="#0089ff" align="center">Styled components</p>
+<p color="#0089ff" align="center">Material UI</p>
+<p color="#0089ff" align="center">Axios</p>
+<p color="#0089ff" align="center">react-scroll-to-top</p>
+<p color="#0089ff" align="center">react-select</p>
+
+<h3 align="center">Thank you for your attention to the project, I hope you enjoy it!</h3>

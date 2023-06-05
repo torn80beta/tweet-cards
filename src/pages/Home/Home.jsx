@@ -4,6 +4,10 @@ import {
   StyledContainerDiv,
   StyledTextP,
   StyledImg,
+  StyledH2,
+  StyledUl,
+  StyledLi,
+  StyledH3,
 } from './Home.styled';
 import ScrollToTop from 'react-scroll-to-top';
 import card from '../../images/card.jpg';
@@ -16,11 +20,22 @@ import modal from '../../images/modal.jpg';
 import hi from '../../images/Hi.gif';
 
 export const Home = () => {
+  const technologies = [
+    'React',
+    'Redux Toolkit',
+    'React Hooks',
+    'Styled components',
+    'Material UI',
+    'Axios',
+    'react-scroll-to-top',
+    'react-select',
+  ];
+
   return (
     <StyledMain>
       <StyledContainerDiv>
         <StyledH1>
-          Welcome to TweetCards demo page!{' '}
+          Welcome to TweetCards demo page!
           <StyledImg
             src={hi}
             style={{ height: 30, display: 'inline', margin: 0 }}
@@ -78,9 +93,20 @@ export const Home = () => {
         <StyledImg src={burger} alt="burger" />
         <br />
         <StyledImg src={modal} alt="modal" />
-        <StyledTextP>
+        <section>
+          <StyledH2>Technologies</StyledH2>
+          <StyledTextP>
+            Technologies and libraries used to create this project:
+          </StyledTextP>
+          <StyledUl>
+            {technologies.map(tech => (
+              <StyledLi key={tech}>{tech}</StyledLi>
+            ))}
+          </StyledUl>
+        </section>
+        <StyledH3>
           Thank you for your attention to the project! I hope you enjoy it!
-        </StyledTextP>
+        </StyledH3>
       </StyledContainerDiv>
       <ScrollToTop smooth style={{ background: '#ebd8ff' }} />
     </StyledMain>

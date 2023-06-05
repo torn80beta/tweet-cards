@@ -70,7 +70,7 @@ export const Tweets = () => {
         </StyledLoadSpinner>
       )}
       <StyledTweetsUl>
-        {filteredTweets().length === 0 && (
+        {filteredTweets().length === 0 && !isFetching && (
           <p style={{ color: 'white' }}>
             There is nothing to display ¯\_(ツ)_/¯
           </p>
