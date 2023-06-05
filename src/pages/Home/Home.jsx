@@ -5,6 +5,7 @@ import {
   StyledTextP,
   StyledImg,
 } from './Home.styled';
+import ScrollToTop from 'react-scroll-to-top';
 import card from '../../images/card.jpg';
 import follow from '../../images/follow.jpg';
 import follow_2 from '../../images/follow_2.jpg';
@@ -81,6 +82,7 @@ export const Home = () => {
           Thank you for your attention to the project! I hope you enjoy it!
         </StyledTextP>
       </StyledContainerDiv>
+      <ScrollToTop smooth style={{ background: '#ebd8ff' }} />
     </StyledMain>
   );
 };

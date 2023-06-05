@@ -70,6 +70,11 @@ export const Tweets = () => {
         </StyledLoadSpinner>
       )}
       <StyledTweetsUl>
+        {filteredTweets().length === 0 && (
+          <p style={{ color: 'white' }}>
+            There is nothing to display ¯\_(ツ)_/¯
+          </p>
+        )}
         {filteredTweets().map(tweet => (
           <li key={tweet.id}>
             <TweetCard tweet={tweet} />
