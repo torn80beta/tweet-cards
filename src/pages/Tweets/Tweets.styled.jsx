@@ -11,7 +11,6 @@ export const StyledTweetsSection = styled.section`
   min-height: 100vh;
   margin: 0 auto;
   padding: 80px 0px 60px;
-  /* background-color: #1e242a; */
   background-color: #112538;
 `;
 
@@ -51,7 +50,6 @@ export const StyledNavLink = styled(NavLink)`
   top: 50%;
   left: calc((100vw - 90%) * 0.25);
   color: #ebd8ff;
-  /* color: #452199; */
   z-index: 100;
   &:hover {
     color: #aeffd9;
