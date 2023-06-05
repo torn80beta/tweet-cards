@@ -14,6 +14,7 @@ import { StyledNavLink } from './Tweets.styled';
 import { StyledLoadSpinner } from 'components/LoadSpinner/LoadSpinner.styled';
 import { RotatingLines } from 'react-loader-spinner';
 import Filter from 'components/Filter/Filter';
+import ScrollToTop from 'react-scroll-to-top';
 
 export const Tweets = () => {
   const dispatch = useDispatch();
@@ -84,6 +85,7 @@ export const Tweets = () => {
           Load more
         </StyledLoadMoreButton>
       )}
+      <ScrollToTop smooth style={{ background: '#ebd8ff' }} />
     </StyledTweetsSection>
   );
 };
