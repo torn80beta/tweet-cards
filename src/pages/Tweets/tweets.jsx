@@ -75,7 +75,7 @@ export const Tweets = () => {
           </li>
         ))}
       </StyledTweetsUl>
-      {tweets.length > 0 && tweets.length < 15 && (
+      {tweets.length > 0 && tweets.length < 50 && filter === 'All' && (
         <StyledLoadMoreButton
           type="button"
           onClick={handleLoadMore}
