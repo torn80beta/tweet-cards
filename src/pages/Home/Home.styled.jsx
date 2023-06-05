@@ -5,12 +5,28 @@ export const StyledMain = styled.main`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100vw;
-  height: 100vh;
   background-color: #112538;
+`;
+
+export const StyledContainerDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  padding: 80px 20px 40px;
 `;
 
 export const StyledH1 = styled.h1`
   text-align: center;
   color: #fff;
+`;
+
+export const StyledTextP = styled.p`
+  color: white;
+`;
+
+export const StyledImg = styled.img`
+  width: auto;
+  margin: 15px;
 `;
