@@ -19,7 +19,7 @@ import burger from '../../images/burger.jpg';
 import modal from '../../images/modal.jpg';
 import hi from '../../images/Hi.gif';
 
-export const Home = () => {
+const Home = () => {
   const technologies = [
     'React',
     'Redux Toolkit',
@@ -112,3 +112,5 @@ export const Home = () => {
     </StyledMain>
   );
 };
+
+export default Home;

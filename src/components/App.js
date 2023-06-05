@@ -1,9 +1,10 @@
 import { Route, Routes } from 'react-router-dom';
-import { Home } from 'pages/Home/Home';
-import { Tweets } from 'pages/Tweets/Tweets';
-import { useEffect } from 'react';
+import { useEffect, lazy } from 'react';
 import SharedLayout from './SharedLayout/SharedLayout';
 import './App.css';
+
+const Home = lazy(() => import('../pages/Home/Home'));
+const Tweets = lazy(() => import('../pages/Tweets/Tweets'));
 
 export const App = () => {
   useEffect(() => {

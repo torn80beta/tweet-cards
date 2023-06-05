@@ -16,7 +16,7 @@ import { RotatingLines } from 'react-loader-spinner';
 import Filter from 'components/Filter/Filter';
 import ScrollToTop from 'react-scroll-to-top';
 
-export const Tweets = () => {
+const Tweets = () => {
   const dispatch = useDispatch();
   const tweets = useSelector(getUsers);
   const isFetching = useSelector(getIsLoading);
@@ -94,3 +94,5 @@ export const Tweets = () => {
     </StyledTweetsSection>
   );
 };
+
+export default Tweets;
